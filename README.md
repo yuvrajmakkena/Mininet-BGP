@@ -2,7 +2,6 @@
 
 ![image](https://github.com/yuvrajmakkena/Mininet-BGP/assets/40199249/51cbb304-d213-458b-8262-f27c14d2e302)
 
- 
 
 ## Topology
 
@@ -11,6 +10,17 @@
 ## Simulate the Network
      
        sudo python bgp.py
+
+## Flow
+
+- Setup: AS1, AS2, and AS3 are legitimate Autonomous Systems interconnected with routing daemons. AS1 has a BGP route to reach a specific IP prefix (e.g., 13.0.0.0/8) through AS2 and AS3.
+- Initially, these hosts in AS1 were communicating with a web server in AS3 using the legitimate BGP route through AS2 and AS3.
+- When AS4 (rogue AS) starts advertising a BGP route to the same IP prefix (e.g., 13.0.0.0/8) with a shorter attractive path, AS1 updates its routing tables to prefer the new, shorter route via AS4.
+- As a result, traffic from hosts h1-1, h1-2, and h1-3 is redirected through AS4 instead of the legitimate path through AS2 and AS3.
+- This redirection may allow AS4 to inspect, manipulate, or block the traffic as it passes through.
+
+Affected Hosts in AS1:
+- Hosts h1-1, h1-2, and h1-3 in AS1 are the ones compromised and attacked by the BGP hijacking attack.
 
 
 ## Network IPs
