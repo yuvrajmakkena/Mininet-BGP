@@ -1,3 +1,7 @@
+## Clone
+
+       git clone https://github.com/yuvrajmakkena/Mininet-BGP/tree/main
+
 ## Folder structure
 
 ![image](https://github.com/yuvrajmakkena/Mininet-BGP/assets/40199249/51cbb304-d213-458b-8262-f27c14d2e302)
